@@ -12,17 +12,17 @@ mydb = mysql.connector.connect(
 
 )
 mycursor = mydb.cursor()
+summoner_list = []
+rank_list = []
 division_list = ['IV','III','II', 'I']
 tier_list = ['IRON','BRONZE', 'SILVER', 'GOLD', 'PLATINUM', 'DIAMOND']
 
 def save_summoners():
+    index = 0
     for j in tier_list:
         for i in division_list:
             request_summoners = api.get_summoners('RANKED_SOLO_5x5',j,i)
             for x in request_summoners:
-                #summoner_by_name = api.get_summoner_by_name(x['summonerName'])
-                sql = "INSERT INTO summoners (summonername, summonerrank) VALUES (%s, %s)"
-                val = (x['summonerName'], j + ' ' + i)
-                mycursor.execute(sql, val)
-                time.sleep(1.5)
-    mydb.commit()
+                summoner_list.append(x['summonerName'])
+                rank_list.append(j + ' ' + i)
+
