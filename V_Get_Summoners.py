@@ -6,6 +6,7 @@ api = V_API('RGAPI-e5beecbd-0e85-49b2-a722-e565c6402188') #Insert API key
 
 summoner_list = []
 summoner_id_list = []
+match_id_list = []
 division_list = ['IV','III','II', 'I']
 tier_list = ['IRON','BRONZE', 'SILVER', 'GOLD', 'PLATINUM', 'DIAMOND']
 
@@ -32,5 +33,5 @@ def test_single():
     request_matchids = api.get_match_history(summoner_id_list[0])
     index = 0
     for x in request_matchids['matches']:
-        print(request_matchids['matches'][index]['gameId'])
+        match_id_list.append(request_matchids['matches'][index]['gameId'])
         index +=1

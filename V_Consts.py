@@ -3,6 +3,7 @@ URL = {
     'summoner_by_name': 'v{version}/summoners/by-name/{names}',
     'match_lists_by_account': 'v{version}/matchlists/by-account/{accountid}',
     'summoners_by_rank': 'v{version}/entries/{queue}/{tier}/{division}',
+    'match_stats_by_matchid': 'v{version}/matches/{matchid}'
 }
 
 API_VERSIONS = {

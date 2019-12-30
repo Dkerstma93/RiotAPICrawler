@@ -48,3 +48,11 @@ class V_API(object):
             division=division
         )
         return self._request(api_url, api)
+
+    def get_matchstats(self, matchid):
+        api = 'match'
+        api_url = Consts.URL['match_stats_by_matchid'].format(
+            version=Consts.API_VERSIONS['match'],
+            matchid = matchid
+        )
+        return self._request(api_url, api)
