@@ -10,6 +10,7 @@ mydb = mysql.connector.connect(
   database="vilemawdb"
 
 )
+
 mycursor = mydb.cursor()
 
 def get_match_stats():
