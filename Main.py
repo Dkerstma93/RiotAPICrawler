@@ -1,10 +1,10 @@
 from V_Get_Summoners import *
-from V_Get_Statistics import get_match_stats
+
+division_list = []
+tier_list = []
 
 def main():
-    save_summoners()
-    save_saccount_id()
-    save_match_id()
+    save_summoners('DIAMOND','I')
     get_match_stats()
 
 if __name__ == "__main__":

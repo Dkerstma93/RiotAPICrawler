@@ -1,6 +1,8 @@
 import requests
 import V_Consts as Consts
 
+
+
 class V_API(object):
     def __init__(self, api_key, region=Consts.REGIONS['europe_west']):
         self.api_key = api_key
